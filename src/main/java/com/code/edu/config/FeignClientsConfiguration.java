@@ -1,6 +1,5 @@
 package com.code.edu.config;
 
-import com.google.common.base.Strings;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
