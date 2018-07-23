@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -49,7 +50,8 @@ public class JiajuApplication extends SpringBootServletInitializer{
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
 		try {
-			File keystore = new ClassPathResource("mykeys.jks").getFile();
+			File keystore = ResourceUtils.getFile("classpath:mykeys.jks");
+//            new ClassPathResource("mykeys.jks").getFile();
             /*File truststore = new ClassPathResource("sample.jks").getFile();*/
 			connector.setScheme("https");
 			connector.setSecure(true);
