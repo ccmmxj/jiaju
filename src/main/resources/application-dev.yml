@@ -1,5 +1,11 @@
 server:
     port: 8080
+https:
+    port: 8443
+    ssl:
+        key-store: classpath:mykeys.jks
+        key-store-password: cmx123456
+        key-password: cmx123456
 eureka:
     port: 8888
     client:
