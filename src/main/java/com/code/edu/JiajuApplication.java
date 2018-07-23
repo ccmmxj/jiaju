@@ -13,10 +13,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient
 @EnableFeignClients
 @MapperScan(basePackages = "com.code.edu.mapper")
-public class EduApplication extends SpringBootServletInitializer{
+public class JiajuApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 //		SpringApplication.run(EduApplication.class, args);
-		new SpringApplicationBuilder(EduApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(JiajuApplication.class).web(true).run(args);
 	}
 }
