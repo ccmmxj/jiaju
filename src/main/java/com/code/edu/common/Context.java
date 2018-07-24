@@ -21,7 +21,7 @@ public interface Context {
         }
     }
     static File getHttpsFile(String classpathName) throws IOException {
-        if(getSystem().startsWith("win1")){
+        if(getSystem().startsWith("win")){
             File keystore = new ClassPathResource(classpathName).getFile();
             return keystore;
         }else{

@@ -1,6 +1,6 @@
 package com.code.edu;
 
-import org.apache.catalina.Context;
+import com.code.edu.common.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
 import org.springframework.beans.factory.annotation.Value;
@@ -50,7 +50,7 @@ public class JiajuApplication extends SpringBootServletInitializer{
 		Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
 		try {
 //			File keystore = new ClassPathResource("mykeys.jks").getFile();
-			File keystore = com.code.edu.common.Context.getHttpsFile("mykeys.jks");
+			File keystore = Context.getHttpsFile("mykeys.jks");
             /*File truststore = new ClassPathResource("sample.jks").getFile();*/
 			connector.setScheme("https");
 			connector.setSecure(true);
