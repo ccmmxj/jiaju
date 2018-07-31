@@ -31,6 +31,12 @@ public class JiajuApplication extends SpringBootServletInitializer{
 	@Value("${https.ssl.key-store-password}")
 	private String key_store_password;
 
+	@Value("${https.classname}")
+	private String classname;
+
+	@Value("${https.password}")
+	private String password;
+
 	@Value("${https.ssl.key-password}")
 	private String key_password;
 	public static void main(String[] args) {
@@ -50,7 +56,7 @@ public class JiajuApplication extends SpringBootServletInitializer{
 		Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
 		try {
 //			File keystore = new ClassPathResource("mykeys.jks").getFile();
-			File keystore = Context.getHttpsFile("mykeys.jks");
+			File keystore = Context.getHttpsFile(classname);
             /*File truststore = new ClassPathResource("sample.jks").getFile();*/
 			connector.setScheme("https");
 			connector.setSecure(true);

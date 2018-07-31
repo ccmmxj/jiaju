@@ -5,11 +5,13 @@ server:
 #        key-store-password: czd102930
 #        store-name: linux.jks
 https:
+    classname: edu.ccmmxj.club.jks
+    password: 9899872k7g4h0
     port: 8443
     ssl:
-        key-store: classpath:mykeys.jks
-        key-store-password: cmx123456
-        key-password: cmx123456
+        key-store: classpath:${https.classname}
+        key-store-password: ${https.password}
+        key-password: ${https.password}
 eureka:
     port: 8888
     host: edu.ccmmxj.club
